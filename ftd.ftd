@@ -3,3 +3,41 @@ toc: $config.python-toc
 header-left: $config.documentation-section
 header-right: $config.empty
 
+[`ftd`](https://ftd.dev/) is a domain specific language to create UI and prose.
+
+-- ft.code: ftd hello world
+lang: ftd
+
+\-- ftd.text: Hello World
+
+-- ft.markdown:
+
+[`fpm`](https://fpm.dev/) the package manager for `ftd` files.
+
+`ftd-py` is a Python wrapper for `ftd` and `fpm`.
+
+
+-- ft.code: using package explicitly
+lang: py
+
+import ftd
+
+package = ftd.package("foo.com/bar/", folder="baz")
+# internally calls .download() and .build() if folder named baz does not exist
+
+package.render_sync("/", x=10)
+> "<html>...</html>"
+
+
+-- ft.code: using environment variables
+lang: py
+
+$ FPM_PACKAGE_NAME=foo.com/bar/ FPM_FOLDER=baz python
+>>> import ftd
+>>> ftd.render_sync("/", x=10)
+
+-- ft.markdown:
+
+We have passed `FPM_PACKAGE_NAME` and `FPM_FOLDER` (optional), environment
+variables. If the package does not exist, it will be downloaded, and its
+dependencies installed.
