@@ -1,1 +1,7 @@
--- ft.page: hello
+-- ft.page-with-toc: `ftd-py`: Python Package for Working With FTD/FPM
+toc: $config.index-toc
+header-left: $config.empty
+header-right: $config.empty
+
+`import ftd` is all you need for you UI needs.
+

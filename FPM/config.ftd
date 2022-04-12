@@ -1,0 +1,55 @@
+-- import: ft
+
+-- ft.github: https://github.com/fifthtry/cdoc/
+
+-- fpm.toc-item list empty:
+
+-- ft.header-toc:
+$processor$: toc
+
+- Why `ftd-py`?: why/
+- Documentation: ftd/
+- Development: development/
+- Support
+
+-- fpm.toc-item list index-toc:
+$processor$: toc
+
+- Home: index.html
+- Features
+- License - BSD
+- Contributors
+- Changelog
+
+-- fpm.toc-item list documentation-section:
+$processor$: toc
+
+- Python: ftd/
+- Django: django/
+
+-- fpm.toc-item list python-toc:
+$processor$: toc
+
+- Overview: ftd/
+- Installation
+- Rendering An FTD File
+- Getting Data From FTD File
+
+-- fpm.toc-item list django-toc:
+$processor$: toc
+
+- Overview: django/
+- Installation
+- Settings
+- Using FTD As Template Language
+- Serving FTD Files
+- Using Nginx for Serving Files
+
+-- fpm.toc-item list why-toc:
+$processor$: toc
+
+- Why `ftd-py`?: why/
+- Build UI Without Python
+- Preview UI In Different States
+
+

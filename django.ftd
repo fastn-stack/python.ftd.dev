@@ -1,0 +1,5 @@
+-- ft.page-with-toc: `ftd_django` Documentation
+toc: $config.django-toc
+header-left: $config.documentation-section
+header-right: $config.empty
+
