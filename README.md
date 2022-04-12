@@ -1,2 +1,3 @@
-# fpm-template
-FPM Blank Package Template Repo
+# ftd-py: Python Package for Working With FTD/FPM
+
+
