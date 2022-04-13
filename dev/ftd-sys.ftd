@@ -1,0 +1,11 @@
+-- ft.page-with-toc: `ftd-py/ftd_sys` Development
+header-left: $config.dev-section
+header-right: $config.empty
+toc: $config.dev-ftd-sys-toc
+
+
+`ftd_sys` is a low level Rust binding to [`fpm` crate](https://fpm.dev/crate/).
+
+We use [maturin](https://maturin.rs) for creating and managing this package.
+
+
