@@ -1,0 +1,19 @@
+-- ft.page-with-toc: Creating Build After Changing rs files or Cargo.toml
+header-left: $config.dev-section
+header-right: $config.empty
+toc: $config.dev-ftd-sys-toc
+
+Every time any Rust file or Cargo.toml/Cargo.lock file in `ftd-py/ftd_sys`, you
+have to run:
+
+-- ft.code:
+lang: sh
+
+maturin develop
+
+-- ft.markdown:
+
+This must be run from `ftd_sys` folder.
+
+Please ensure you have [done the setup](dev/ftd-sys/setup/) properly before you
+do this.

@@ -1,0 +1,5 @@
+-- ft.page-with-toc: Journal
+header-left: $config.dev-section
+header-right: $config.empty
+toc: $config.dev-overview
+

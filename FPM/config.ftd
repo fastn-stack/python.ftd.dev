@@ -9,7 +9,7 @@ $processor$: toc
 
 - Why `ftd-py`?: why/
 - Documentation: ftd/
-- Development: development/
+- Development: journal/
 - Support
 
 -- fpm.toc-item list index-toc:
@@ -26,6 +26,37 @@ $processor$: toc
 
 - Python: ftd/
 - Django: django/
+
+-- fpm.toc-item list dev-section:
+$processor$: toc
+
+- Overview: journal/
+- `ftd-py/ftd`: dev/ftd/
+- `ftd-py/ftd_django`
+- `ftd-py/ftd_sys`: dev/ftd-sys/
+
+-- fpm.toc-item list dev-overview:
+$processor$: toc
+
+- Journal: journal/
+
+-- fpm.toc-item list dev-ftd-toc:
+$processor$: toc
+
+- Overview: dev/ftd/
+- Changelog
+
+-- fpm.toc-item list dev-ftd-sys-toc:
+$processor$: toc
+
+- Overview: dev/ftd-sys/
+- Changelog
+- Day To Day Stuff
+  - Setting Up Development Environment For `ftd_sys`: dev/ftd-sys/setup/
+  - Creating Build After Changing rs files or Cargo.toml: dev/ftd-sys/building/
+- Dependencies
+  - `maturin`: deps/maturin/
+
 
 -- fpm.toc-item list python-toc:
 $processor$: toc

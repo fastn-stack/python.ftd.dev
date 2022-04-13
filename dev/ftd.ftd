@@ -1,0 +1,4 @@
+-- ft.page-with-toc: `ftd-py/ftd` Development
+header-left: $config.dev-section
+header-right: $config.empty
+toc: $config.dev-ftd-toc

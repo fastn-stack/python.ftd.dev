@@ -1,0 +1,7 @@
+-- ft.page-with-toc: `maturin`
+header-left: $config.dev-section
+header-right: $config.empty
+toc: $config.dev-ftd-sys-toc
+
+We use [maturin](https://maturin.rs) for building our [`ftd-sys`](dev/ftd-sys/)
+Python package.
