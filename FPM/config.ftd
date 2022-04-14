@@ -34,7 +34,7 @@ $processor$: toc
 - Overview: journal/
 - `ftd-py/ftd`: dev/ftd/
 - `ftd-py/ftd_django`
-- `ftd-py/ftd_sys`: dev/ftd-sys/
+- `ftd-py/ftd_sys`: ftd-sys/
 
 -- fpm.toc-item list dev-overview:
 $processor$: toc
@@ -50,14 +50,14 @@ $processor$: toc
 -- fpm.toc-item list dev-ftd-sys-toc:
 $processor$: toc
 
-- Overview: dev/ftd-sys/
-- `ftd_sys.build()`: dev/ftd-sys/build/
-- `ftd_sys.render()`: dev/ftd-sys/render/
+- Overview: ftd-sys/
+- `ftd_sys.build()`: ftd-sys/build/
+- `ftd_sys.render()`: ftd-sys/render/
 - Changelog
 - Day To Day Stuff
-  - Setting Up Development Environment For `ftd_sys`: dev/ftd-sys/setup/
-  - Creating Build After Changing rs files or Cargo.toml: dev/ftd-sys/building/
-  - Using Local `fpm`: dev/ftd-sys/local-fpm/
+  - Setting Up Development Environment For `ftd_sys`: ftd-sys/setup/
+  - Creating Build After Changing rs files or Cargo.toml: ftd-sys/building/
+  - Using Local `fpm`: ftd-sys/local-fpm/
 - Dependencies
   - `maturin`: deps/maturin/
 
