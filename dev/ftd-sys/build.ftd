@@ -1,0 +1,37 @@
+-- ft.page-with-toc: `ftd_sys.build()`
+header-left: $config.dev-section
+header-right: $config.empty
+toc: $config.dev-ftd-sys-toc
+
+`ftd_sys.build()` lets you build ftd files in the current FPM package.
+
+-- ft.code:
+lang: py
+
+from typing import Optional
+
+def build(base_url: str, file: Optional[str], ignore_failed: bool = False)
+
+
+-- ft.markdown:
+
+`ftd_sys.build()` assumes that the [current
+directory](https://docs.python.org/3/library/os.html#os.getcwd) is a valid fpm
+package (meaning it has `FPM.ftd` file etc).
+
+This function stores all built HTML and other files in a folder named `.build`
+in current directory, and returns nothing.
+
+-- ft.h1: `base_url`
+
+`base_url` is required.
+
+-- ft.h1: `file`
+
+If `file` is passed, only this fill will be built. If `file` is not built, all
+the files in fpm package would be built.
+
+-- ft.h1: `ignore_failed`
+
+If `ignore_failed` is True, `ftd_sys.build()` will ignore `ftd` files that have
+syntax error etc, and build as many files as it can.

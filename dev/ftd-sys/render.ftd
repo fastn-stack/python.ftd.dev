@@ -1,0 +1,27 @@
+-- ft.page-with-toc: `ftd_sys.render()`
+header-left: $config.dev-section
+header-right: $config.empty
+toc: $config.dev-ftd-sys-toc
+
+`ftd_sys.render()` renders a single ftd file and returns the generated HTML.
+
+-- ft.code:
+lang: py
+
+def render(id: str, data: str) -> str
+
+-- ft.h1: `id`
+
+`ftd_sys.render()` accepts the "id" of the document to be built. The ID
+corresponds to the relative path of the URL after the base_url has been removed.
+
+Eg if the current fpm package's name is `amitu.com/foo/` and the specific
+document we are looking for is `amitu.com/foo/bar/`, the `id` would be `/bar/`.
+
+-- ft.h1: `data`
+
+The document being rendered may use [`get-data`
+processor](https://fpm.dev/processors/get-data/), the passed `data` is made
+available to `get-data`.
+
+The `data` is JSON serialised string version of the data.

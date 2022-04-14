@@ -3,3 +3,52 @@ header-left: $config.dev-section
 header-right: $config.empty
 toc: $config.dev-ftd-sys-toc
 
+`ftd_sys` is part of `ftd-py` repo. You will have to clone the repository first:
+
+
+-- ft.code:
+lang: sh
+
+git clone git@github.com:FifthTry/ftd-py.git
+cd ftd-py
+
+-- ft.markdown:
+
+To work with `ftd-py`, first create a virtual environment and then install the
+dependencies.
+
+Note: `ftd_sys` is only works on Python 3.6 and above.
+
+-- ft.code: virtual environment and dependencies
+lang: sh
+
+python -m venv .env
+source .env/bin/activate
+pip install -r requirements.txt
+
+-- ft.markdown:
+
+Now we can start working on `ftd_sys`.
+
+-- ft.code: building project using [`maturin`](deps/maturin/)
+lang: sh
+
+cd ftd_sys
+maturin develop
+
+-- ft.markdown:
+
+Now you should have `ftd_sys` available in your virtual environment. You can
+test is by running:
+
+-- ft.code:
+lang: py
+
+python
+>>> import ftd_sys
+
+-- ft.markdown:
+
+If you see any error, your setup is not done correctly.
+
+
