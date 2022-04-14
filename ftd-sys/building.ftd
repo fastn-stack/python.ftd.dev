@@ -15,5 +15,5 @@ maturin develop
 
 This must be run from `ftd_sys` folder.
 
-Please ensure you have [done the setup](dev/ftd-sys/setup/) properly before you
+Please ensure you have [done the setup](ftd-sys/setup/) properly before you
 do this.

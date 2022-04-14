@@ -6,7 +6,7 @@ toc: $config.dev-ftd-sys-toc
 During development, you may want to use a local version of `fpm` crate, instead
 of the one from Github. You may want to do this to debug what is going on, add
 print statements etc. You may also be adding a new feature altogether which
-requires changes in both `fpm_sys` and in `fpm`.
+requires changes in both `ftd_sys` and in `fpm`.
 
 In `ftd_sys/Cargo.toml` you find the dependency:
 
@@ -36,4 +36,4 @@ fpm = { path = "../../fpm" }
 For this to work you have checked out `FifthTry/fpm` next to `ftd-py` folder.
 
 Note: Every time you change any Rust code in `../../fpm` folder now, you will
-have to [build `fpm_sys` module again using](dev/ftd-sys/building/).
+have to [build `fpm_sys` module again using](ftd-sys/building/).
