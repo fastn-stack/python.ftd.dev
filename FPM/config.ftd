@@ -50,10 +50,13 @@ $processor$: toc
 $processor$: toc
 
 - Overview: dev/ftd-sys/
+- `ftd_sys.build()`: dev/ftd-sys/build/
+- `ftd_sys.render()`: dev/ftd-sys/render/
 - Changelog
 - Day To Day Stuff
   - Setting Up Development Environment For `ftd_sys`: dev/ftd-sys/setup/
   - Creating Build After Changing rs files or Cargo.toml: dev/ftd-sys/building/
+  - Using Local `fpm`: dev/ftd-sys/local-fpm/
 - Dependencies
   - `maturin`: deps/maturin/
 
