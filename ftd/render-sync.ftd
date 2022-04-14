@@ -1,0 +1,31 @@
+-- ft.page-with-toc: `ftd.render_sync()`
+toc: $config.python-toc
+header-left: $config.documentation-section
+header-right: $config.empty
+
+`ftd.render_sync()` is synchronous version of `ftd.render()`.
+
+-- ft.code:
+lang: ftd
+
+def render_sync(id: str, **data) -> str
+
+-- ft.markdown:
+
+Returns HTML.
+
+-- ft.h1: `id`
+
+`ftd.render_sync()` accepts the "id" of the document to be built. The ID
+corresponds to the relative path of the URL after the base_url has been removed.
+
+Eg if the current fpm package's name is `amitu.com/foo/` and the specific
+document we are looking for is `amitu.com/foo/bar/`, the `id` would be `/bar/`.
+
+-- ft.h1: `data`
+
+The document being rendered may use [`get-data`
+processor](https://fpm.dev/processors/get-data/). To pass `data` is used to pass
+data to `get-data`.
+
+

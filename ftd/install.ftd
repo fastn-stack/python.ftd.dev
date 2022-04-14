@@ -1,0 +1,12 @@
+-- ft.page-with-toc: Installing `ftd`
+toc: $config.python-toc
+header-left: $config.documentation-section
+header-right: $config.empty
+
+`ftd` is available on `pypi`. To install it run:
+
+-- ft.code:
+lang: sh
+
+pip install ftd
+

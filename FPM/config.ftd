@@ -2,12 +2,13 @@
 
 -- ft.github: https://github.com/fifthtry/cdoc/
 
+-- ft.site-title: `ftd-py`
+
 -- fpm.toc-item list empty:
 
 -- ft.header-toc:
 $processor$: toc
 
-- Why `ftd-py`?: why/
 - Documentation: ftd/
 - Development: journal/
 - Support
@@ -65,9 +66,11 @@ $processor$: toc
 $processor$: toc
 
 - Overview: ftd/
-- Installation
-- Rendering An FTD File
-- Getting Data From FTD File
+- Installation: ftd/install/
+- `ftd.Document`: ftd/document/
+- `ftd.parse()`: ftd/parse/
+- `ftd.render()`: ftd/render/
+- `ftd.render_sync()`: ftd/render-sync/
 
 -- fpm.toc-item list django-toc:
 $processor$: toc

@@ -1,0 +1,56 @@
+-- ft.page-with-toc: `ftd.Document`
+toc: $config.python-toc
+header-left: $config.documentation-section
+header-right: $config.empty
+
+`ftd.Document` represents a single parsed ftd document. This document should be
+constructed using [`ftd.parse()`](ftd/parse/) function.
+
+You would want to use this class only if you want to parse the document once
+and render it multiple times. For one time rendering consider using
+[`ftd.render()`](ftd/render/) or [`ftd.render_sync()`](ftd/render-sync/).
+
+
+-- ft.h1: `ftd.Document.render()`
+
+`ftd.Document.render()` renders current document and returns the HTML.
+
+-- ft.code:
+lang: py
+
+class Document:
+    async def render(self, **data) -> str:
+        pass
+
+
+
+-- ft.h2: `data`
+
+The document being rendered may use [`get-data`
+processor](https://fpm.dev/processors/get-data/). To pass `data` is used to pass
+data to `get-data`.
+
+-- ft.h3: Example
+
+Say we have a ftd file like this:
+
+-- ft.code: index.ftd
+lang: ftd
+
+\-- string x:
+$processor$: get-data
+
+\-- ftd.text: $x
+
+-- ft.markdown:
+
+We can render it to HTML using:
+
+-- ft.code:
+lang: py
+
+
+import ftd
+
+d = ftd.parse("/")
+d.render(x=10)
