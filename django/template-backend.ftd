@@ -1,0 +1,78 @@
+-- ft.page-with-toc: `ftd` Django Template Backend
+toc: $config.django-toc
+header-left: $config.documentation-section
+
+`ftd_django.TemplateEngine` can be configured in your Django project by adding
+this to your django settings:
+
+-- ft.code:
+lang: py
+
+TEMPLATES = [
+    {
+        "BACKEND": "ftd_django.TemplateBackend",
+        "DIRS": ["<folder-name>"],
+        "APP_DIRS": False,
+        "OPTIONS": {
+            "base": "/",  # Default value is `/`
+        },
+    },
+]
+
+-- ft.markdown:
+
+You can use `ftd_django.TemplateBackend` along with other template engines. The
+name of templates handled by `ftd_django.TemplateEngine` start and end with `/`,
+eg `/` or `/foo/`.
+
+
+-- ft.h1: `TEMPLATES`
+
+[`TEMPLATES` is used by Django to configure template
+engines](https://docs.djangoproject.com/en/4.0/topics/templates/#configuration).
+Here we have configured a single template engine, `ftd_django.TemplateBackend`.
+
+-- ft.h2: `DIRS`
+
+`DIRS` key must contain a single folder name only. We do not supprot template
+fallback. Setting zero or more than one folder here leads to
+[`django.core.exceptions.ImproperlyConfigured`](https://docs.djangoproject.com/en/4.0/ref/exceptions/#improperlyconfigured)
+exception.
+
+The folder mentioned in `DIRS` must be a valid `fpm package`, it must contain
+`FPM.ftd` file for example.
+
+-- ft.h2: `APP_DIRS`
+
+`ftd_django.TemplateBackend` does not support
+[`APP_DIRS`](https://docs.djangoproject.com/en/4.0/ref/settings/#std:setting-TEMPLATES-APP_DIRS).
+It must be set to False or it will cause
+[`django.core.exceptions.ImproperlyConfigured`](https://docs.djangoproject.com/en/4.0/ref/exceptions/#improperlyconfigured)
+exception.
+
+-- ft.h2: `OPTIONS.base`
+
+A fpm package has a base name. Say there is a file `foo.ftd` in your fpm package,
+it's full URL would be `<fpm-package-name>/foo/`. `<fpm-package-name>` could
+be something like `a.com/b/`. The `base` in this case would be `/b/`. But when
+running locally, the base could be `/`.
+
+You should only specify your production base name in `OPTIONS.base`,
+`ftd_django.TemplateEngine` automatically uses `/` when `settings.DEBUG` is
+`True`. See `OPTIONS.debug-base`.
+
+-- ft.h2: `OPTIONS.debug-base`
+
+`debug-base` should only be specified if the default value of `/` is not
+acceptable when `settings.DEBUG` is `True`. `OPTIONS.debug-base` can be `False`,
+to use `OPTIONS.base` even when `settings.DEBUG` is `True`. Or
+`OPTIONS.debug-base` can be set to a `str`, and that value would be used when
+`settings.DEBUG` is `True`.
+
+
+
+
+
+
+
+

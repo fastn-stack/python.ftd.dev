@@ -1,0 +1,63 @@
+-- import: fpm
+
+
+-- ft.page-with-toc: Template Engine Guide
+toc: $config.django-dev-toc
+header-left: $config.documentation-section
+header-right: $config.empty
+
+`ftd_django` is based on "Django Enhancement Proposal" {dep}
+
+Multiple template backend can be active for the same django project.
+
+
+
+
+
+-- ft.h1: How Is Template Backend Selected
+
+When you call `render("foo.html")`, and if there is more than one template
+backend installed you have to find which backend can handle the `foo.html`.
+
+
+
+
+-- ft.h2: `using` Approach
+
+This is the note preferred approach, you can select a backend manually by
+passing `using="<backend-name>"`.
+
+This option is only available to support advanced use cases.
+
+The `<backend-name>` is the penultimate part of the template backend engine, so
+for us it would be `ftd_django` since our engine name is `ftd_django.FTDEngine`
+
+
+
+
+-- ft.h2: Fallback Approach
+
+When a template is needed each backend is tried, and first backend that returns
+a template is used. Since there will be only maybe two backends this approach
+is not too bad. This is the preferred approach.
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- ftd.text dep: {b: DEP 182} Multiple Template Engines.
+link: https://github.com/django/deps/blob/main/final/0182-multiple-template-engines.rst
+
+-- ftd.text b: Bordered Text
+border-width: 1
+border-radius: 3
+border-color: $fpm.color.main.text
+padding: 3

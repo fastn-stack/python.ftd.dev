@@ -3,5 +3,5 @@ toc: $config.index-toc
 header-left: $config.empty
 header-right: $config.empty
 
-`import ftd` is all you need for you UI needs.
+`import ftd` is all you need for your UI needs.
 

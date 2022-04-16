@@ -2,7 +2,7 @@
 
 -- ft.github: https://github.com/fifthtry/cdoc/
 
--- ft.site-title: `ftd-py`
+-- ft.site-name: `ftd-py`
 
 -- fpm.toc-item list empty:
 
@@ -25,15 +25,15 @@ $processor$: toc
 -- fpm.toc-item list documentation-section:
 $processor$: toc
 
-- Python: ftd/
-- Django: django/
+- `ftd`: ftd/
+- `ftd_django`: django/
 
 -- fpm.toc-item list dev-section:
 $processor$: toc
 
 - Overview: journal/
 - `ftd-py/ftd`: dev/ftd/
-- `ftd-py/ftd_django`
+- `ftd-py/ftd_django`: django/dev/
 - `ftd-py/ftd_sys`: ftd-sys/
 
 -- fpm.toc-item list dev-overview:
@@ -46,6 +46,13 @@ $processor$: toc
 
 - Overview: dev/ftd/
 - Changelog
+
+-- fpm.toc-item list django-dev-toc:
+$processor$: toc
+
+- Overview: django/dev/
+- Template Engine Guide: django/template-engine-guide/
+
 
 -- fpm.toc-item list dev-ftd-sys-toc:
 $processor$: toc
@@ -77,10 +84,9 @@ $processor$: toc
 
 - Overview: django/
 - Installation
-- Settings
-- Using FTD As Template Language
-- Serving FTD Files
-- Using Nginx for Serving Files
+- `ftd_django.TemplateBackend`: django/template-backend/
+- CSRF
+- Auto Escaping
 
 -- fpm.toc-item list why-toc:
 $processor$: toc
