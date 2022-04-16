@@ -3,3 +3,10 @@ toc: $config.django-toc
 header-left: $config.documentation-section
 header-right: $config.empty
 
+`ftd_django` is a Python package that lets you use [`ftd`](https://ftd.dev) and
+[`fpm`](https://fpm.dev) with your [Django
+project](https://www.djangoproject.com).
+
+Primary way to use `ftd` files with Django via the
+[`ftd_django.TemplateBackend`](django/template-backend/).
+
