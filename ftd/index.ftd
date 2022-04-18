@@ -22,25 +22,13 @@ lang: py
 
 >>> import ftd
 >>>
->>> package = ftd.package("foo.com/bar/", folder="baz")
->>> # internally calls .download() and .build() if folder named baz does not exist
->>>
->>> package.render_sync("/", x=10)
-"<html>...</html>"
->>>
-
-
--- ft.code: using environment variables
-lang: py
-
-\$ FPM_PACKAGE_NAME=foo.com/bar/ FPM_FOLDER=baz python
->>> import ftd
->>> ftd.render_sync("/", x=10)
+>>> doc = ftd.render(id="/", root="foo")
 "<html>...</html>"
 >>>
 
 -- ft.markdown:
 
-We have passed `FPM_PACKAGE_NAME` and `FPM_FOLDER` (optional), environment
-variables. If the package does not exist, it will be downloaded, and its
-dependencies installed.
+This code assumes you have already checked out the fpm package in a local folder
+named `foo`.
+
+Learn the details of [`ftd.render()` here](ftd/render/).
