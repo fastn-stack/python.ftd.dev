@@ -46,7 +46,7 @@ The folder mentioned in `DIRS` must be a valid `fpm package`, it must contain
 
 `ftd_django.TemplateBackend` does not support
 [`APP_DIRS`](https://docs.djangoproject.com/en/4.0/ref/settings/#std:setting-TEMPLATES-APP_DIRS).
-It must be set to False or it will cause
+It must either not be set, or set to False or it will cause
 [`django.core.exceptions.ImproperlyConfigured`](https://docs.djangoproject.com/en/4.0/ref/exceptions/#improperlyconfigured)
 exception.
 
