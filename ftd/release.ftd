@@ -13,5 +13,5 @@ toc: $config.dev-ftd-sys-toc
 -- ft.code:
 lang: sh
 
-$ python setup.py sdist bdist_wheel
+\$ python setup.py sdist bdist_wheel
 $ python -m twine upload dist/*
