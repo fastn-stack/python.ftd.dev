@@ -1,0 +1,17 @@
+-- ft.page-with-toc: Create pypi release `ftd_django`
+header-left: $config.dev-section
+header-right: $config.empty
+toc: $config.dev-ftd-sys-toc
+
+
+-- ft.h1: Create PyPI `ftd_django` release
+
+- Install `twine` using `pip install twine`
+- Bump the version in [setup.py](https://github.com/FifthTry/ftd-py/blob/main/ftd_django/setup.py)
+- Run the following command
+
+-- ft.code:
+lang: sh
+
+$ python setup.py sdist bdist_wheel
+$ python -m twine upload dist/*
