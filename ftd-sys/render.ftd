@@ -8,7 +8,13 @@ toc: $config.dev-ftd-sys-toc
 -- ft.code:
 lang: py
 
-def render(id: str, data: str) -> str
+def render(root: Optional[str], id: str, base_url: str, data: str) -> str
+
+-- ft.h1: `root`
+
+`ftd_sys.render()` accepts the "root" of the fpm package. It specifies the location where
+the fpm package exists. This is an optional field. In case if value is not provided,
+it will take the current directory as the root for fpm package.
 
 -- ft.h1: `id`
 
@@ -17,6 +23,13 @@ corresponds to the relative path of the URL after the base_url has been removed.
 
 Eg if the current fpm package's name is `amitu.com/foo/` and the specific
 document we are looking for is `amitu.com/foo/bar/`, the `id` would be `/bar/`.
+
+-- ft.h1: `base_url`
+
+A fpm package has a base name. Say there is a file `foo.ftd` in your fpm package,
+it's full URL would be `<fpm-package-name>/foo/`. `<fpm-package-name>` could
+be something like `a.com/b/`. The `base` in this case would be `/b/`. But when
+running locally, the base could be `/`.
 
 -- ft.h1: `data`
 
