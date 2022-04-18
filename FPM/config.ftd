@@ -65,6 +65,7 @@ $processor$: toc
   - Setting Up Development Environment For `ftd_sys`: ftd-sys/setup/
   - Creating Build After Changing rs files or Cargo.toml: ftd-sys/building/
   - Using Local `fpm`: ftd-sys/local-fpm/
+  - Creating a release of `ftd_sys`: ftd-sys/release/
 - Dependencies
   - `maturin`: deps/maturin/
 
