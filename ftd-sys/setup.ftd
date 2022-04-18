@@ -44,7 +44,7 @@ test is by running:
 -- ft.code:
 lang: py
 
-python
+\$ python
 >>> import ftd_sys
 
 -- ft.markdown:
