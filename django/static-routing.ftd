@@ -1,0 +1,34 @@
+-- ft.page-with-toc: A Note On Static Routing
+toc: $config.django-dev-toc
+header-left: $config.dev-section
+header-right: $config.empty
+
+[`ftd_django.static()`](django/static/) serves static files present in
+`fpm package root`/`.build` folder, taking into account `fpm base` URL. This
+document describes how this works.
+
+A file in `.build/foo`, `foo` is mapped to `/<fpm base>/<foo>` URL. If `foo` is
+a folder and there is also `foo/index.html`, we serve the content of
+`foo/index.html` when `foo` is requested.
+
+
+-- ft.code: Pseudo code For Routing
+lang: py
+
+FPM_BASE = get_base()
+FPM_PACKAGE_ROOT = get_root()
+
+def request_to_file(request):
+    if not request.path.startswith(FPM_BASE):
+        raise Http404()
+    remaining = request.path.split(FPM_BASE, 1)[1]
+    remaining = normalise_path(remaining)
+    if is_file(remaining):
+        return open(remaining)
+    remaining_index = remaining + "/index.html"
+    if is_dir(remaining) and is_file(remaining_index):
+        return open(remaining_index)
+    raise Http404()
+
+
+

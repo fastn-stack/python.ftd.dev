@@ -14,7 +14,9 @@ lang: ftd
 
 [`fpm`](https://fpm.dev/) the package manager for `ftd` files.
 
-`ftd-py` is a Python wrapper for `ftd` and `fpm`.
+`ftd-py` is a Python wrapper for `ftd` and `fpm`. You may also want to checkout
+[`ftd_django`](django/), a set of helpers to use `ftd`/`fpm` with your Django
+project.
 
 
 -- ft.code: using package explicitly

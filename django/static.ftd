@@ -1,0 +1,44 @@
+-- ft.page-with-toc: `ftd_django.static()` Handler
+toc: $config.django-toc
+header-left: $config.documentation-section
+
+When using [`ftd_django.TemplateBackend`](django/template-backend/), the ftd
+files may refer to static files.
+
+Django has support for serving static files, but FPM has superior asset
+management support, for example it allows you to refer to static files from
+fpm packages that are dependencies of your fpm package, and to use
+`assets.files.*` entries which convert 404 into build time errors (if you refer
+to a Django static asset that actually does not exist on disc, your visitors get
+a 404 error, where as if you use refer to a missing fpm asset, there is build
+time error, or at least a run time 500 server error).
+
+To use the `ftd_django.static_files()` you have to add it to your `urls.py`:
+
+-- ft.code:
+lang: py
+
+import ftd_django
+
+urlpatterns = [
+    # ... the rest of your URLconf goes here ...
+] + ftd_django.static()
+
+-- ft.markdown:
+
+`ftd_django.static()` reads `TEMPLATES` configuration as described in
+[`ftd_django.TemplateBackend`](django/template-backend/) documentation, and
+finds the `OPTIONS.base` and `DIRS[0]` as `fpm base` and `fpm package root` in
+the way described there.
+
+Implementation Note: [Static Routing](django/static-routing/)
+
+-- ft.h1: `fpm build`
+
+`ftd_django.static()` reads files from `.build` folder in `fpm package root`.
+The `.build` folder is created by running `fpm build`, so this command must be
+built before everything will work correctly.
+
+
+
+
