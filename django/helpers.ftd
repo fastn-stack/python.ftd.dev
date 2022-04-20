@@ -1,0 +1,25 @@
+-- ft.page-with-toc: `ftd_django.helpers` module
+toc: $config.django-dev-toc
+header-left: $config.dev-section
+
+
+-- ft.h1: `ftd_django.helpers.validate_settings()`
+
+`ftd_django.helpers.validate_settings()` validates that
+[`ftd_django.TemplateBackend`](django/template-backend/) is properly
+configured and returns `fpm base` and `fpm package root`.
+
+-- ft.code:
+lang: py
+
+def validate_settings() -> (str, str):
+
+
+-- ft.h1: `safe_join`
+
+-- ft.code:
+lang: py
+
+def safe_join(base: str, *paths: List[str]) -> str:
+    pass
+
