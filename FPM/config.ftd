@@ -6,7 +6,7 @@
 
 -- fpm.toc-item list empty:
 
--- ft.header-toc:
+-- ft.sections:
 $processor$: toc
 
 - Documentation: ftd/

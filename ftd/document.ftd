@@ -1,7 +1,7 @@
 -- ft.page-with-toc: `ftd.Document`
 toc: $config.python-toc
-header-left: $config.documentation-section
-header-right: $config.empty
+sub-sections: $config.documentation-section
+extra: $config.empty
 
 `ftd.Document` represents a single parsed ftd document. This document should be
 constructed using [`ftd.parse()`](ftd/parse/) function.

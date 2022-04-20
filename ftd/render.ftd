@@ -2,8 +2,8 @@
 
 -- ft.page-with-toc: `ftd.render()`
 toc: $config.python-toc
-header-left: $config.documentation-section
-header-right: $config.empty
+sub-sections: $config.documentation-section
+extra: $config.empty
 
 `ftd.render()` is async version of `ftd.render_sync()`.
 

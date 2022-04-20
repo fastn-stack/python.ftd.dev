@@ -1,6 +1,6 @@
 -- ft.page-with-toc: `ftd` Django Template Backend
 toc: $config.django-toc
-header-left: $config.documentation-section
+sub-sections: $config.documentation-section
 
 `ftd_django.TemplateEngine` can be configured in your Django project by adding
 this to your django settings:

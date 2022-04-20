@@ -1,6 +1,6 @@
 -- ft.page-with-toc: `ftd_django.helpers` module
 toc: $config.django-dev-toc
-header-left: $config.dev-section
+sub-sections: $config.dev-section
 
 
 -- ft.h1: `ftd_django.helpers.validate_settings()`

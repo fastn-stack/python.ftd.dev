@@ -2,8 +2,8 @@
 
 -- ft.page-with-toc: `ftd.render_sync()`
 toc: $config.python-toc
-header-left: $config.documentation-section
-header-right: $config.empty
+sub-sections: $config.documentation-section
+extra: $config.empty
 
 `ftd.render_sync()` is synchronous version of `ftd.render()`.
 

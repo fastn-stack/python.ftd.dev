@@ -1,6 +1,6 @@
 -- ft.page-with-toc: Using Local `fpm`
-header-left: $config.dev-section
-header-right: $config.empty
+sub-sections: $config.dev-section
+extra: $config.empty
 toc: $config.dev-ftd-sys-toc
 
 During development, you may want to use a local version of `fpm` crate, instead

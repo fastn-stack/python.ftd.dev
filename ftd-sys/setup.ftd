@@ -1,6 +1,6 @@
 -- ft.page-with-toc: Setting Up Development Environment For `ftd_sys`
-header-left: $config.dev-section
-header-right: $config.empty
+sub-sections: $config.dev-section
+extra: $config.empty
 toc: $config.dev-ftd-sys-toc
 
 `ftd_sys` is part of `ftd-py` repo. You will have to clone the repository first:

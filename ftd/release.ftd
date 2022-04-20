@@ -1,6 +1,6 @@
 -- ft.page-with-toc: Create pypi release `ftd`
-header-left: $config.dev-section
-header-right: $config.empty
+sub-sections: $config.dev-section
+extra: $config.empty
 toc: $config.dev-ftd-sys-toc
 
 

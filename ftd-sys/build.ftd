@@ -1,6 +1,6 @@
 -- ft.page-with-toc: `ftd_sys.build()`
-header-left: $config.dev-section
-header-right: $config.empty
+sub-sections: $config.dev-section
+extra: $config.empty
 toc: $config.dev-ftd-sys-toc
 
 `ftd_sys.build()` lets you build ftd files in the current FPM package.

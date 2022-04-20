@@ -1,6 +1,6 @@
 -- ft.page-with-toc: `ftd_django.static()` Handler
 toc: $config.django-toc
-header-left: $config.documentation-section
+sub-sections: $config.documentation-section
 
 When using [`ftd_django.TemplateBackend`](django/template-backend/), the ftd
 files may refer to static files.

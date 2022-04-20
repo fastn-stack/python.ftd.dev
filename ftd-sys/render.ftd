@@ -1,8 +1,8 @@
 -- import: fifthtry.github.io/python.ftd.dev/common as c
 
 -- ft.page-with-toc: `ftd_sys.render()`
-header-left: $config.dev-section
-header-right: $config.empty
+sub-sections: $config.dev-section
+extra: $config.empty
 toc: $config.dev-ftd-sys-toc
 
 `ftd_sys.render()` renders a single ftd file and returns the generated HTML.
