@@ -13,7 +13,7 @@ to a Django static asset that actually does not exist on disc, your visitors get
 a 404 error, where as if you use refer to a missing fpm asset, there is build
 time error, or at least a run time 500 server error).
 
-To use the `ftd_django.static_files()` you have to add it to your `urls.py`:
+To use the `ftd_django.static()` you have to add it to your `urls.py`:
 
 -- ft.code:
 lang: py
@@ -37,7 +37,7 @@ Implementation Note: [Static Routing](django/static-routing/)
 
 `ftd_django.static()` reads files from `.build` folder in `fpm package root`.
 The `.build` folder is created by running `fpm build`, so this command must be
-built before everything will work correctly.
+run before everything will work correctly.
 
 
 
