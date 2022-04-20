@@ -52,6 +52,7 @@ $processor$: toc
 
 - Overview: django/dev/
 - Template Engine Guide: django/template-engine-guide/
+- A Note On Static Routing: django/static-routing/
 
 
 -- fpm.toc-item list dev-ftd-sys-toc:
@@ -88,6 +89,7 @@ $processor$: toc
 - Overview: django/
 - Installation
 - `ftd_django.TemplateBackend`: django/template-backend/
+- `ftd_django.static()`: django/static/
 - CSRF
 - Auto Escaping
 
