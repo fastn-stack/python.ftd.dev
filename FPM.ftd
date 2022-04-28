@@ -3,7 +3,7 @@
 -- fpm.package: fifthtry.github.io/python.ftd.dev
 zip: github.com/fifthtry/python.ftd.dev/archive/refs/heads/main.zip
 
--- fpm.dependency: fifthtry.github.io/Forest-Theme as ft
+-- fpm.dependency: fifthtry.github.io/doc-site as ft
 
 -- fpm.auto-import: ft
 -- fpm.auto-import: fifthtry.github.io/python.ftd.dev/FPM/config
