@@ -3,7 +3,7 @@ sub-sections: $config.dev-section
 extra: $config.empty
 toc: $config.dev-ftd-sys-toc
 
-Every time any Rust file or Cargo.toml/Cargo.lock file in `ftd-py/ftd_sys`, you
+Every time any Rust file or Cargo.toml/Cargo.lock file changes in `ftd-py/ftd_sys`, you
 have to run:
 
 -- ft.code:

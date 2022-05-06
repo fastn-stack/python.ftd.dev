@@ -54,6 +54,8 @@ $processor$: toc
 - Template Engine Guide: django/template-engine-guide/
 - A Note On Static Routing: django/static-routing/
 - `ftd_django.helpers` module: django/helpers/
+- Day To Day Stuff
+  - Creating Local Build After Changes: django/building/
 
 
 -- fpm.toc-item list dev-ftd-sys-toc:
