@@ -19,7 +19,7 @@ and render it multiple times. For one time rendering consider using
 lang: py
 
 class Document:
-    async def render(self, **data) -> str:
+    def render(self, **data) -> str:
         pass
 
 
