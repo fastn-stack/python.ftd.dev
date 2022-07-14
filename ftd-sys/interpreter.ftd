@@ -1,0 +1,78 @@
+-- ft.page: `Interpreter`
+
+This Rust `struct` is used as `pyclass` that exposes some methods and data
+structure to python. `ftd_sys::Interpreter` is wrapper over `ftd::Interpreter`
+
+`pyclass` is a `pyo3` attribute macro which convert `rust struct` to
+`python class`
+
+-- ft.code:
+lang: rs
+
+#[pyclass]
+struct Interpreter {
+    document_id: String,
+    config: fpm::Config,
+    interpreter: std::cell::RefCell<Option<ftd::Interpreter>>,
+    library: std::cell::RefCell<fpm::Library2>,
+}
+
+impl Interpreter {
+    pub fn state_name(&self) -> PyResult<String>
+    pub fn get_module_to_import(&self) -> PyResult<String>
+    pub fn continue_after_import(&self, source: Option<String>) -> PyResult<()>
+    pub fn get_processor_section(&self) -> PyResult<Section>
+    pub fn resolve_processor(&self, section: &Section) -> PyResult<FtdValue>
+    pub fn resolve_import(&self, module: &str) -> PyResult<String>
+    pub fn continue_after_processor(&self, value: FtdValue) -> PyResult<()>
+    pub fn get_foreign_variable_to_resolve(&self) -> PyResult<String>
+    pub fn resolve_foreign_variable(
+        &self,
+        variable: String,
+        base_url: Option<String>,
+    ) -> PyResult<FtdValue>
+    pub fn continue_after_foreign_variable(
+        &self,
+        variable: &str,
+        value: FtdValue
+    ) -> PyResult<()>
+    pub fn render(&self) -> PyResult<String>
+}
+
+-- ft.h2: `document_id`
+
+`document_id` contains document id which is getting interpreted.
+
+For Example if we have `ui/foo.ftd` file, so `document_id` will be `ui/foo`.
+
+
+-- ft.h2: `config`
+
+`config` contains `fpm::Config`(TODO: It should point to fpm::Config Document)
+object.
+
+-- ft.h2: `interpreter`
+
+`interpreter` contains `ftd::Interpreter`, which maintain different states of
+`interpreter` while interpreting the document.
+
+-- ft.code: ftd::Interpreter
+lang: rs
+
+pub enum Interpreter {
+    StuckOnImport {
+        module: String,
+        state: InterpreterState,
+    },
+    StuckOnProcessor {
+        state: InterpreterState,
+        section: ftd::p1::Section,
+    },
+    StuckOnForeignVariable {
+        variable: String,
+        state: InterpreterState,
+    },
+    Done {
+        document: ftd::p2::Document,
+    },
+}

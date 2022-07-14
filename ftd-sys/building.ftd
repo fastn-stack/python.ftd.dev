@@ -13,7 +13,9 @@ maturin develop
 
 -- ft.markdown:
 
-This must be run from `ftd_sys` folder.
+This must be run from `ftd_sys` folder. `maturin develop` create a python
+package and install it into virtualenv so `ftd_sys` would be usable in python
+as dependency.
 
 Please ensure you have [done the setup](ftd-sys/setup/) properly before you
 do this.
