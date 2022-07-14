@@ -11,12 +11,12 @@ extra: $config.empty
 lang: ftd
 
 def render(
-    id: str,
+    id: str, *,
+    root: Optional[str] = None,
+    base_url: Optional[str] = None,
     handle_processor: Callable,
     handle_foreign_variable: Callable,
     handle_import: Callable,
-    root: Optional[str] = None,
-    base_url: Optional[str] = None,
     **data
 ) -> str:
     pass

@@ -8,11 +8,12 @@ lang: py
 
 def interpret(
     id: str,
-    handle_processor: Callable,
-    handle_foreign_variable: Callable,
-    handle_import: Callable,
+    *,
     root: Optional[str] = None,
     base_url: Optional[str] = None,
+    handle_processor: Callable = None,
+    handle_foreign_variable: Callable = None,
+    handle_import: Callable = None,
     data: Optional[str] = None,
 ):
     pass
@@ -63,3 +64,16 @@ so `root` will be `/Users/wilderbit/github/python.ftd.dev`
 
 `base_url` represents the where this package is getting served remotely. It is
 defined in `FPM.ftd` in `fpm.package` section.
+
+
+-- ft.h1: `interpret Definition`
+
+This function calls `ftd_sys.interpret()` to interpret the document. This
+function can return different states of interpreter. We have these states
+`stuck_on_import`, `stuck_on_foreign_variable`, `stuck_on_processor`, and
+`done`. If interpreter have state `stuck_on_import` so it has to resolve the
+document which is being import. If it has state `stuck_on_foreign_variable` so
+it has resolve foreign variable. If it has state  `stuck_on_processor` so it has
+resolve the foreign variables. If it has state `done` that means document has
+interpreted successfully, after that it is calling `ftd_sys.interpreter.render()`
+to render the document.
