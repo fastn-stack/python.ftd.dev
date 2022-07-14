@@ -1,8 +1,8 @@
 -- ft.page: `interpret`
 
-`ftd_sys` exposes this function to `ftd-python`, this function calls
-`ftd::interpret` which returns the `ftd::Interpreter` and returns
-[ftd_sys::Interpreter](/ftd-sys/interpreter) objects.
+`ftd_sys` exposes this function to `ftd-python`, this function takes `id` as
+parameter and calls `ftd::interpret` which returns the `ftd::Interpreter` and
+returns [ftd_sys::Interpreter](/ftd-sys/interpreter) objects.
 
 
 -- ft.h1: `interpret` Declaration
