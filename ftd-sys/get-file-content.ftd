@@ -1,0 +1,13 @@
+-- ft.page: `get_file_content`
+
+`ftd_sys` exposes this function to `ftd-python`, this function calls
+`fpm::Config.get_file_and_package_by_id` function which return fpm::File
+object and then return file content and file format. This function takes `path`
+and `root` of the file and return the content in byte form.
+
+-- ft.h1: `get_file_content` Declaration
+
+-- ft.code:
+lang: rs
+
+fn get_file_content(root: &str, path: &str) -> PyResult<(Vec<u8>, String)>

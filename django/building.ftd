@@ -3,8 +3,7 @@ sub-sections: $config.dev-section
 extra: $config.empty
 toc: $config.dev-ftd-sys-toc
 
-Every time any file changes in `ftd-py/ftd_django`, you
-have to run:
+Every time any file changes in `ftd-py/ftd_django`, you have to run:
 
 -- ft.code:
 lang: sh
@@ -15,3 +14,8 @@ python setup.py develop
 
 This must be run from `ftd_django` folder.
 
+-- ft.markdown:
+
+If sometimes that does not work, export `ftd_django` in `PYTHONPATH`.
+
+`export PYTHONPATH=$PYTHONPATH:/Users/wilderbit/github/ftd-py/ftd_django/src`

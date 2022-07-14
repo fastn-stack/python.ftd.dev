@@ -3,6 +3,8 @@ sub-sections: $config.dev-section
 extra: $config.empty
 toc: $config.dev-ftd-sys-toc
 
+-- ft.h1: Deprecated Document
+
 `ftd_sys.build()` lets you build ftd files in the current FPM package.
 
 -- ft.code:

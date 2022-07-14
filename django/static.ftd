@@ -26,19 +26,20 @@ urlpatterns = [
 
 -- ft.markdown:
 
-`ftd_django.static()` reads `TEMPLATES` configuration as described in
-[`ftd_django.TemplateBackend`](django/template-backend/) documentation, and
-finds the `OPTIONS.base` and `DIRS[0]` as `fpm base` and `fpm package root` in
-the way described there.
 
-Implementation Note: [Static Routing](django/static-routing/)
+`ftd_django.static()` reads file from directory with given `path` and call
+[`ftd.render()`](ftd/render) function to render the content. It uses
+`ftd_django.helpers.validate_settings()`[django/helpers] to get the `fpm base`
+and `fpm package root`. If `ftd.render()` function returns `content_type` `ftd`
+so it will call `ftd.render` to interpret the `ftd` document, otherwise it will
+render the file content directly.
+
+Implementation Note [Deprecated]: [Static Routing](django/static-routing/)
 
 -- ft.h1: `fpm build`
+
+- Deprecated
 
 `ftd_django.static()` reads files from `.build` folder in `fpm package root`.
 The `.build` folder is created by running `fpm build`, so this command must be
 run before everything will work correctly.
-
-
-
-

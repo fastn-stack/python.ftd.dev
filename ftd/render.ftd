@@ -10,12 +10,20 @@ extra: $config.empty
 -- ft.code:
 lang: ftd
 
-async def render(id: str, root: Optional[str] = None, base_url: Optional[str] = None, **data) -> str
+def render(
+    id: str, *,
+    root: Optional[str] = None,
+    base_url: Optional[str] = None,
+    handle_processor: Callable,
+    handle_foreign_variable: Callable,
+    handle_import: Callable,
+    **data
+) -> str:
+    pass
 
 -- ft.markdown:
 
 Returns HTML.
 
 -- c.render-definition:
-
 

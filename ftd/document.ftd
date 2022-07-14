@@ -8,8 +8,56 @@ constructed using [`ftd.parse()`](ftd/parse/) function.
 
 You would want to use this class only if you want to parse the document once
 and render it multiple times. For one time rendering consider using
-[`ftd.render()`](ftd/render/) or [`ftd.render_sync()`](ftd/render-sync/).
+[`ftd.render()`](ftd/render/).
 
+
+-- ft.h1: `Document.__init__()`
+
+This function Initialize the `Document` object with parameters.
+
+-- ft.code:
+lang: py
+
+def __init__(
+    self,
+    id: str,
+    root: Optional[str] = None,
+    base_url: Optional[str] = None,
+    handle_processor: Callable = None,
+    handle_foreign_variable: Callable = None,
+    handle_import: Callable = None,
+    **data,
+):
+    pass
+
+-- ft.h2: `id`
+
+`id` of the document.
+
+-- ft.h2: `root`
+
+Root of the FPM Package.
+
+-- ft.h2: `base_url`
+
+`base_url` is a `host_url` where FPM package is deployed.
+
+
+-- ft.h2: `handle_processor`
+
+`handle_processor` is a function that handles the `ftd` document `processor`.
+This function only gets called if Rust written `resolve_processor` return None
+value.
+
+-- ft.h2: `handle_foreign_variable`
+
+`handle_foreign_variable` is a function that handles the `ftd` document foreign
+variables.
+
+
+-- ft.h2: `handle_import`
+
+`handle_import` is a function that handles the `ftd` document `processor`.
 
 -- ft.h1: `ftd.Document.render()`
 
@@ -19,7 +67,7 @@ and render it multiple times. For one time rendering consider using
 lang: py
 
 class Document:
-    async def render(self, **data) -> str:
+    def render(self, **data) -> str:
         pass
 
 

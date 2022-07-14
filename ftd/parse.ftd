@@ -10,13 +10,15 @@ extra: $config.empty
 -- ft.code:
 lang: py
 
-async def parse(
+def parse(
     id: str,
+    handle_processor: Callable,
+    handle_foreign_variable: Callable,
+    handle_import: Callable,
     root: Optional[str] = None,
     base_url: Optional[str] = None,
     **data
 ) -> ftd.Document
 
 -- c.render-definition:
-
 

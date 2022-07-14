@@ -1,0 +1,79 @@
+-- ft.page: `ftd.interpreter()`
+
+interpreter takes the document `id` and return the interpreted document as
+html page.
+
+-- ft.code:
+lang: py
+
+def interpret(
+    id: str,
+    *,
+    root: Optional[str] = None,
+    base_url: Optional[str] = None,
+    handle_processor: Callable = None,
+    handle_foreign_variable: Callable = None,
+    handle_import: Callable = None,
+    data: Optional[str] = None,
+):
+    pass
+
+-- ft.h2: `id`
+
+It is document `id`, say if we have `foo/abc.ftd` so `id` of the this document
+will be `foo/abc`
+
+-- ft.h2: `handle_processor`
+
+This is a function which handles interpreter's `processor`. In internal we are
+calling Rust ffi to handle `processors` which are already written in Rust.
+If any processor is not written in Rust, so this function will get call to
+handle the `processor`.
+
+-- ft.h2: `handle_foreign_variable`
+
+This is same as `handle_processor`, If Rust ffi `resolve_foreign_variable`
+do not handle so `interpreter` will call this function to handle foreign
+variables.
+
+-- ft.h2: `handle_import`
+
+This function is also same as `handle_processor`. If Rust ffi `resolve_import`
+do not handle the imports, so this function will get called by `interpreter`.
+
+
+-- ft.h2: `root`
+
+This represents the directory of the FPM package.
+
+-- ft.h3: Example
+
+Say we have a FPM package like this:
+
+-- ft.code:
+lang: sh
+
+\/Users/wilderbit/github/python.ftd.dev
+    |-- FPM.ftd
+    |-- README.md
+    |-- index.ftd
+
+so `root` will be `/Users/wilderbit/github/python.ftd.dev`
+
+-- ft.h2: `base_url`
+
+`base_url` represents the where this package is getting served remotely. It is
+defined in `FPM.ftd` in `fpm.package` section.
+
+
+-- ft.h1: `interpret Definition`
+
+This function calls `ftd_sys.interpret()` to interpret the document. This
+function can return different states of interpreter. We have these states
+`stuck_on_import`, `stuck_on_foreign_variable`, `stuck_on_processor`, and
+`done`. If interpreter have state `stuck_on_import` so it has to resolve the
+document which is being import. If it has state `stuck_on_foreign_variable` so
+it has resolve foreign variable. If it has state  `stuck_on_processor` so it has
+resolve the foreign variables. If it has state `done` that means document has
+interpreted successfully, after that it is calling `ftd_sys.interpreter.render()`
+to render the document.
