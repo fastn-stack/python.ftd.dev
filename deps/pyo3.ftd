@@ -1,0 +1,5 @@
+-- ft.page: `pyo3`
+
+We use [`pyo3`](https://pyo3.rs/) for bridge between Python and Rust. We have
+written `ftd` interpreter in Rust so we are calling that(Rust) from Python to
+interpret the document.
