@@ -1,0 +1,15 @@
+-- ft.page: `object_to_value`
+
+`ftd_sys` exposes this function to `ftd-python`, this function takes `data` as
+string, `section` and `interpreter` as parameter and convert `data` to FtdValue
+
+-- ft.h1: Declaration
+
+-- code:
+lang: rs
+
+fn object_to_value(
+    data: String,
+    section: &Section,
+    interpreter: &Interpreter,
+) -> PyResult<FtdValue>
